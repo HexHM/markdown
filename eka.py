@@ -3,4 +3,4 @@
 print('Hello, word'):
 
 
-print("Ja tämän sovelluksen koodasi nönnönnöö")
+print("Ja tämän sovelluksen koodasi nönnönnööö")
