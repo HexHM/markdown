@@ -16,4 +16,4 @@ print(henkilö1["etunimi"]+'n', "ikä on", henkilö1["ika"], "vuotta")
 muotoiltu_merkkijono = f"{henkilö1["etunimi"]}n ikä on {henkilö1["ika"]} vuotta"
 print(muotoiltu_merkkijono)
 
-#ye
+#yet
