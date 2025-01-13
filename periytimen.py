@@ -4,7 +4,7 @@
 # KIRJASTOT JA MODUULIT
 #----------------------
 #pystyy joko kokonaan importtaamaan toisista fileista asioita
-# import oliot # Tuo koko oliot.py moduulin sisältö
+#import oliot # Tuo koko oliot.py moduulin sisältö
 import datetime
 from oliot import Student # tuo vain student pohjan oliot moduulista
 
@@ -27,6 +27,14 @@ class Person():
         self.etunimi = etunimi
         self.sukunimi = sukunimi
 
+    def calculateAge3(self, isoBirthday: str) -> float:
+        birthday = datetime.datetime.fromisoformat(isoBirthday)
+        age = datetime.datetime.now() - birthday
+        ageInYears = age.days / 365
+        return round(ageInYears)
+    
+# Staattinen metodi, joka laskee iän. Staattisessa ei lasketa
+# vaan metodia voi käyttää suoraan luokasta käsin
 @staticmethod
 def calculateAge(birthday) -> float:
     birthDay = datetime.datetime.fromisoformat(birthday)
@@ -34,7 +42,8 @@ def calculateAge(birthday) -> float:
     ageInYears = age.days / 365
     return round(ageInYears)
 
-
+# luokkametodi on myös staattinen, eli ei vaadi olion muodostamistaa
+# huomaa luokkaan viittava cls
 @classmethod
 def calculateAge2(cls, birthday):
     birthDay = datetime.datetime.fromisoformat(birthday)
@@ -85,3 +94,9 @@ if __name__ == "__main__":
     
     student = Student("Tuittu Kiukkunen", "auto22b", 2004-10-23)
     print (f"{student.name} on {student.calculateAge} ")
+    
+    
+    person1 = Person("Calle", "Keckelberg")
+    ika3 = person1.calculateAge3("2009-10-22")
+    print(f"Henkilön {person1.etunimi} ikä on {ika3} vuotta")
+    
