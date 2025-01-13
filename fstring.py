@@ -7,5 +7,6 @@ opiskelija3 = {"etunimi": "eetu", "sukunimi": "herra", "ika": 16}
 
 print(opiskelija1["etunimi"] + "n ikä on", opiskelija1["ika"])
 
-merkkijono = 
+merkkijono = f"opiskelijan {opiskelija1.etunimi} sukunimi on {opiskelija1.sukunimi}
+
 print(merkkijono)
